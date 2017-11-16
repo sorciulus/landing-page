@@ -1,0 +1,26 @@
+{
+  "name": "landing-page",
+  "version": "1.0.0",
+  "description": "Landing Page SosTariffe",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "*",
+    "gulp-concat": "*",
+    "gulp-less": "*",
+    "gulp-clean-css": "*",
+    "gulp-sass": "*",
+    "gulp-uglify": "*",
+    "gulp-watch": "*",
+    "gulp-imagemin" : "*",
+    "gulp-cache": "*"
+  },
+  "devDependencies": {
+    "browser-sync": "*",
+    "gulp-connect": "*"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Corrado Ronci",
+  "license": "ISC"
+}

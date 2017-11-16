@@ -1,0 +1,382 @@
+/**
+ * Main LESS file
+ *
+ * Compile this into main.css
+ */
+
+
+/**
+ * Import vendor CSS
+ */
+@import '../../bower_components/normalize.css/normalize.css';
+@import '../../bower_components/foundation/css/foundation.css';
+@import '../../bower_components/foundation/css/normalize.css';
+ 
+/**
+ * Define variables
+ */
+@red:    #B94A48;
+@white:  #FFFFFF;
+@yellow: #FFC000;
+@grey:   #9B9B9B;
+@radius: 25px;
+
+/**
+ * Define mixins
+ */
+.box-shadow(@horizontal, @vertical, @blur, @spread, @color) {
+    -webkit-box-shadow: @horizontal @vertical @blur @spread @color;
+       -moz-box-shadow: @horizontal @vertical @blur @spread @color;
+            box-shadow: @horizontal @vertical @blur @spread @color;
+}
+
+.border-radius(@radius) {
+    -webkit-border-radius: @radius;
+       -moz-border-radius: @radius;
+            border-radius: @radius;
+}
+
+.transition(@type, @duration) {
+    -webkit-transition: @type @duration linear;
+    -moz-transition:    @type @duration linear;
+    -o-transition:      @type @duration linear;
+    -ms-transition:     @type @duration linear;
+    transition:         @type @duration linear;
+}
+
+.auto {
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+.vertical-align {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.white{
+    color: @white;
+}
+
+.yellow{
+    color: @yellow;   
+}
+
+.grey{
+    color: @grey;
+}
+
+.no-margin{
+    margin: 0 !important;
+}
+
+.line-height-25{
+    line-height: 2.5em;
+}
+
+.slim{
+    line-height:0.5em;
+}
+
+.bottom-note{
+    margin: 0;
+    letter-spacing: -1px;
+}
+
+strike{    
+    position:relative;
+    text-decoration:none;
+}
+
+strike::after {
+    content:"";
+    position:absolute;
+    top:50%;
+    left:0;
+    width:100%;
+    height:2px; 
+    background-color: @grey;
+    transform:rotate(-16deg);    
+}
+
+huge{
+    font-size: 3.5em;   
+}
+
+.choice{
+    margin-top: 0.8em;
+}
+
+.icon-yellow{
+    color: @yellow;       
+    margin-right: 8px;
+}
+
+.icon-yellow-big{
+    &:extend(.icon-yellow);
+    font-size: 2em;
+}
+
+.icon-yellow-medium{
+    &:extend(.icon-yellow);
+    font-size: 1.5em;
+}
+
+.icon-list, .icon-list li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.icon-list li {
+  margin: 1em;
+  margin-left: 3em;
+  font-size: 1.2em;  
+}
+
+.icon-list-awesome{    
+    float: left;
+    margin-left: -1.5em;  
+    line-height: 1.1;  
+}
+
+.icon-list-awesome li:first-child:before {
+    &:extend(.icon-list-awesome);
+    font-family: 'FontAwesome';
+    content: '\f075';
+    color: @yellow;
+}
+
+.icon-list-awesome li:nth-child(2):before {
+    &:extend(.icon-list-awesome);    
+    display: inline-block;
+    width: 16px;
+    height: 19px;
+    margin-right: 5px;
+    content: "";
+    background: url('../img/sim-card.png') no-repeat 0 0;
+    background-size: 100%;
+}
+
+.icon-list-awesome li:last-child:before {
+    &:extend(.icon-list-awesome);
+    font-family: 'FontAwesome';
+    content: '\f26c';
+    color: @yellow;
+}
+
+#action-form .form-control{
+    border: 1px solid @grey;
+    border-radius: @radius;
+    height: 3em;
+}
+
+#action-form .info-privacy label{
+    font-size: .8em;
+    line-height: 1em;
+    text-align: justify;
+}
+
+#btn-action{
+    border-radius: @radius;
+    background-color: @yellow;
+    border-color: @yellow;
+    color: black;
+    font-size: x-large;    
+}
+
+.info-month{
+    margin: -1.2em 0 3.4em 0;
+}
+
+.box-info p{
+    margin: 0;
+}
+
+.strong{
+    font-weight: bold;
+}
+
+.big{
+    font-size: 3.5em;
+}
+
+h1.big{
+    margin: .67em 0 .18em 0;
+}
+
+.hr-small-left{
+    width: 5em;
+    margin: 2em auto;
+}
+
+.hr-small-right{
+    &:extend(.hr-small-left);
+    border: 1px solid black;
+    margin: 14em auto 2.2em;
+}
+
+.error{
+    color: @red;
+}
+
+small.error {    
+    font-size: .75rem;
+    font-style: italic;
+    margin-top: -1px;
+    padding: .375rem .5625rem .5625rem;
+    background: transparent !important;
+    font-weight: 400;
+    color: @red !important;
+}
+
+/**
+ * Define default globals
+ */
+html, body {
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: antialiased;
+}
+
+label {
+    cursor: auto;
+}
+
+.has-error {
+    border: 1px solid @red;
+}
+
+.inline {
+    display: inline-block;
+}
+
+.clearfix-after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+.offer{
+    background-color: #303030
+}
+
+.text-white{
+    color: $white; 
+}
+
+
+/**
+ * Print media queries
+ */
+@media print {
+    .large-1 {
+        width: 8.33333% !important;
+    }
+
+    .large-2 {
+        width: 16.66667% !important;
+    }
+
+    .large-3 {
+        width: 25% !important;
+    }
+
+    .large-4 {
+        width: 33.33333% !important;
+    }
+
+    .large-5 {
+        width: 41.66667% !important;
+    }
+
+    ul.large-5 {
+        width: 30% !important;
+    }
+
+    .large-6 {
+        width: 50% !important;
+    }
+
+    .large-7 {
+        width: 58.33333% !important;
+    }
+
+    .large-8 {
+        width: 66.66667% !important;
+    }
+
+    .large-9 {
+        width: 75% !important;
+    }
+
+    .large-10 {
+        width: 83.33333% !important;
+    }
+
+    .large-11 {
+        width: 91.66667% !important;
+    }
+
+    .large-12 {
+        width: 100% !important;
+    }
+
+
+
+    // Remove links
+    a[href]:after {
+        content: none !important;
+    }
+}
+
+
+
+
+/**
+ * Define media queries
+ */
+@media only screen and (min-width: 1024px) {
+
+}
+
+@media screen and (max-width: 40em) and (orientation: landscape) {
+    .padding-landscape-offset{
+        padding-left: 6.5em;
+    }
+
+    .hidden-for-small-only{
+        clip: rect(1px,1px,1px,1px);
+        height: auto;
+        overflow: inherit;
+        position: relative !important;
+        width: auto;
+    }
+
+    .choice{
+        text-align: center;
+    }
+
+    .icon-list{
+        margin-left: 4.5em;        
+    }
+
+    .box-info{
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 40em) and (orientation: portrait) {
+    #btn-action{
+        border-radius: @radius;
+        background-color: @yellow;
+        border-color: @yellow;
+        color: black;        
+        font-size: large;    
+    }
+}

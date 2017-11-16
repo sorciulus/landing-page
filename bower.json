@@ -1,0 +1,12 @@
+{
+    "name" : "landing-page",
+    "description": "Landing Page SosTariffe",
+    "version": "1.0",
+    "dependencies" : {
+        "jquery" : "2.1.0",
+        "foundation": "latest",
+        "normalize.css": "latest",
+        "fontawesome": "latest",
+        "modernizr": "latest"
+    }  
+}
