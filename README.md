@@ -29,3 +29,8 @@ oppure è possibile eseguire il codice su un servizio gestito da gulp.
 $ gulp 
 ```
 Il comando sopra citato effettuerà la build e aprirà direttamente il browser sulla risorsa prestabilita. E' inoltre possibile accedere ( se le impostazioni di rete lo consentono) direttemente alla pagina da qualsiasi dispositivo posto sulla stessa rete
+
+PS. in ambiente unix potrebbe essere necessario avviare gulp come sudoers
+```
+$ sudo gulp 
+```

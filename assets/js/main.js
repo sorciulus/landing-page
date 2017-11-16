@@ -8,8 +8,7 @@
          */
         init: function() {
             this.smooth_scroll();
-            
-            console.log('hello world');    
+                
             $(document).foundation({
                 abide : {
                     live_validate : false,
@@ -21,6 +20,10 @@
                         telephone: /^3+[0-9]{9}$/                        
                     }
                 }
+            });
+
+            $('#action-form').on('valid.fndtn.abide', function () {
+                alert('Dati inviati correttamente!');
             });        
         },
         

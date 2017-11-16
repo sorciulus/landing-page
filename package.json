@@ -11,7 +11,7 @@
     "gulp-sass": "*",
     "gulp-uglify": "*",
     "gulp-watch": "*",
-    "gulp-imagemin" : "*",
+    "gulp-imagemin": "*",
     "gulp-cache": "*"
   },
   "devDependencies": {
